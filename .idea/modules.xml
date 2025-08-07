@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Restaurantefx_database/Restaurantefx_database.iml" filepath="$PROJECT_DIR$/Restaurantefx_database/Restaurantefx_database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Restaurantefx_database_FINAL[1].iml" filepath="$PROJECT_DIR$/.idea/Restaurantefx_database_FINAL[1].iml" />
+    </modules>
+  </component>
+</project>

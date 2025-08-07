@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="btnCancelar" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConfirmarReservacionController">
+   <children>
+      <Button fx:id="btnConfirmarReservar" layoutX="209.0" layoutY="360.0" mnemonicParsing="false" onAction="#reservacionConfirmada" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 30;" text="Reservar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnCancelarREservacion" layoutX="122.0" layoutY="360.0" mnemonicParsing="false" onAction="#cancelarREservacion" style="-fx-background-color: none; -fx-border-color: black; -fx-border-radius: 30;" text="Canelar">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="22.0" layoutY="134.0" text="Personas">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="boxCPersonas" layoutX="109.0" layoutY="132.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-radius: 5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="63.0" layoutY="188.0" text="Día">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="boxCDia" layoutX="109.0" layoutY="186.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-radius: 5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ChoiceBox>
+      <Label layoutX="60.0" layoutY="240.0" text="Mes">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="boxCMes" layoutX="109.0" layoutY="238.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-radius: 5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ChoiceBox>
+      <ChoiceBox fx:id="boxCHora" layoutX="109.0" layoutY="284.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: grey; -fx-border-radius: 5;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ChoiceBox>
+      <Label layoutX="56.0" layoutY="286.0" text="Hora">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <Pane prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #883232;">
+         <children>
+            <Label fx:id="lblNombreRestaurante" layoutX="14.0" layoutY="4.0" text="nombreRestaurante" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="28.0" text="Reservas Restaurant" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgRestaurante" fitHeight="102.0" fitWidth="97.0" layoutX="213.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lblNombreUsuario" layoutX="152.0" layoutY="64.0" text="nombreUsuario">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="27.0" layoutY="64.0" text="Resevacion de">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
