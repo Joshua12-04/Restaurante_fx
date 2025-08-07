@@ -53,7 +53,13 @@ public class CrearCuentaController {
     @FXML
     void CrearUsuario(ActionEvent event) {
         if (validarDatosCompletos()) {
-            abrirPantallaPrincipal(usuario, event);
+            crearUsuarioNuevo();
+            boolean bEntradaValida = existeEnBaseDEDatos();
+            if (!bEntradaValida) {
+                abrirPantallaPrincipal(usuario, event);
+            } else {
+                reiniciarTextosEnBlanco();
+            }
         }
     }
 
@@ -147,7 +153,6 @@ public class CrearCuentaController {
     private boolean validarDatosCompletos() {
         if (comprobarQueIngresoNombre() && comprobarQueIngresoApellido()
                 && comprobarQueIngresoUsuarioNuevo() && comprobarQueIngresoContraseñaNueva()) {
-            crearUsuarioNuevo();
             return true;
         } else {
             return false;
@@ -157,24 +162,34 @@ public class CrearCuentaController {
     public void crearUsuarioNuevo() {
         usuario = new Usuario(strNombreTemporal,strApellidoTemporal
                 ,strUsuarioNuevoTemporal, strContraseñaNuevaTemporal);
-        crearUsuarioNuevoDB();
     }
 
-    private void crearUsuarioNuevoDB() {
+    private boolean existeEnBaseDEDatos() {
         dataBaseManager db = dataBaseManager.getInstance();
 
+        boolean bExiste = revisarExistenciaDB(db);
+
+        crearUsuarioEnDB(bExiste, db);
+        return bExiste;
+    }
+
+    private void crearUsuarioEnDB(boolean bExiste, dataBaseManager db) {
+        if (bExiste) {
+            if (db.crearUsuario(usuario)){
+                System.out.println("usuario creado correctamente en la base de datos");
+            }else {
+                mostrarAlerta("error al crear el usuario, intenta de nuevo");
+            }
+        }
+    }
+
+    private boolean revisarExistenciaDB(dataBaseManager db) {
         if (db.existeUsuario(strUsuarioNuevoTemporal)){
             mostrarAlerta("El nombre de usuario ya existe, elige otro");
-            return;
+            return true;
+        } else {
+            return false;
         }
-
-        if (db.crearUsuario(usuario)){
-            System.out.println("usuario creado correctamente en la base de datos");
-        }else {
-            mostrarAlerta("error al crear el usuario, intenta de nuevo");
-        }
-
-       // System.out.println("Se creo el usuario correctamente");
     }
 
     private boolean comprobarQueIngresoContraseñaNueva() {
