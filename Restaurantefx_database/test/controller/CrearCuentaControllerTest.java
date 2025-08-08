@@ -41,10 +41,10 @@ class CrearCuentaControllerTest {
 
         // Verificaciones
         assertNotNull(usuarioCreado, "El usuario no debería ser null");
-        assertEquals("Gael", usuarioCreado.getNombre(), "El nombre debería ser 'Juan'");
-        assertEquals("Rodriguez", usuarioCreado.getApellido(), "El apellido debería ser 'Pérez'");
-        assertEquals("69Gaelo", usuarioCreado.getNombreUsuario(), "El usuario debería ser 'juanperez'");
-        assertEquals("02/03/2006", usuarioCreado.getContraseñaUsuario(), "La contraseña debería ser 'password123'");
+        assertEquals("Gael", usuarioCreado.getNombre(), "El nombre debería ser 'Gael'");
+        assertEquals("Rodriguez", usuarioCreado.getApellido(), "El apellido debería ser 'Rodriguez'");
+        assertEquals("69Gaelo", usuarioCreado.getNombreUsuario(), "El usuario debería ser '69Gaelo'");
+        assertEquals("02/03/2006", usuarioCreado.getContraseñaUsuario(), "La contraseña debería ser '02/03/2006'");
     }
 
     // Métodos auxiliares para usar reflexión
